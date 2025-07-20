@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <h2>Temperature Converter</h2>
+    <input type="number" id="kelvin" placeholder="Enter Kelvin temprature">
+    <button onclick="convertTemperature()">Celsius</button> 
+    <button onclick="convertToFahrenheit()">Fahrenheit</button>
+    <button onclick="convertToNewton()">Newton</button>
+    <p id="result"></p>
+    <p id="fahrenheitResult"></p>
+    <p id="newtonResult"></p>
+
+    <script>
+        
+function convertTemperature() {
+    let kelvin = parseInt(document.getElementById("kelvin").value);
+    let celsius = kelvin - 273;
+
+
+    document.getElementById("result").innerHTML = `The temperature in Celsius is ${celsius} degrees.`;
+}
+
+function convertToFahrenheit() {
+    let kelvin = parseInt(document.getElementById("kelvin").value);
+    let fahrenheit = (kelvin - 273) * (9 / 5) + 32;
+    fahrenheit = Math.floor(fahrenheit);
+
+    document.getElementById("fahrenheitResult").innerHTML = `The temperature is ${fahrenheit} degrees Fahrenheit.`;
+}
+
+function convertToNewton() {
+    let kelvin = parseInt(document.getElementById("kelvin").value);;
+    let newton = (kelvin - 273) * (33 / 100);
+    newton = Math.floor(newton);
+
+    document.getElementById("newtonResult").innerHTML = `The temperature is ${newton} degrees Newton.`;
+}
+
+    </script>
+
+</body>
+</html>
+
+
+
+
